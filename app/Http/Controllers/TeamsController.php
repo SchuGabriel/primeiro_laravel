@@ -42,6 +42,3 @@ class TeamsController extends Controller
         ]);
     }
 }
-
-// criar uma pagina index
-// css 

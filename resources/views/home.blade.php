@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Laravel</title>
-</head>
-<body>
-    <h1>Olá Mundo!</h1>
-</body>
-</html>
+@extends("layout")
+@section("pageTitle", "Home")
+@section("style")
+    <link rel="stylesheet" href="{{ asset('/css/home.css') }}" type="text/css" />
+@endsection
+@section("content")
+<div class="container">
+    <h1>Bem vindo</h1>
+    <ul class="link-list">
+        <li><a href="{{ route('teams.index') }}">Listar Times</a></li>
+        <li><a href="{{ route('teams.create') }}">Cadastrar Time</a></li>
+    </ul>
+</div>
+@endsection"
