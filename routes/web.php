@@ -22,4 +22,7 @@ Route::prefix("teams")->group(function () {
 
     Route::get('{id}', [TeamsController::class, "edit"])->name("teams.edit");
 
+    Route::put('{id}', [TeamsController::class, "update"])->name("teams.update");
+
+    Route::delete('{id}', [TeamsController::class, "destroy"])->name("teams.destroy");
 });

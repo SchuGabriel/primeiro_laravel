@@ -18,7 +18,11 @@
                 <td>
                     <a href="{{ route('teams.edit', ['id' => $team->id]) }}">Editar</a>
                     <br>
-                    <a href="#">Excluir</a>
+                    <form action="{{ route('teams.destroy', ['id' => $team->id]) }}" method="post">
+                        @method("delete")
+                        @csrf
+                        <button type="submit">Excluir</button>
+                    </form>
                 </td>
             </tr>
         @endforeach

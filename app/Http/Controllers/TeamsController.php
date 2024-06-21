@@ -41,4 +41,20 @@ class TeamsController extends Controller
             "team" => $team,
         ]);
     }
+
+    public function update($id, Request $request){
+        $team = Team::find($id);
+        $team->name = $request->input("name");
+        $team->country = $request->input("country");
+        $team->save();
+
+        return redirect()->route("teams.index");
+    }
+
+    public function destroy($id){
+        $team = Team::find($id);
+        $team->delete();
+
+        return redirect()->route("teams.index");
+    }
 }

@@ -3,7 +3,12 @@
 @section("content")
     <h1>Novo Time</h1>
     <a href="{{ route('teams.index') }}">Voltar</a>
-    <form action="{{ route('teams.store') }}" method="post">
+    @if($team->id)
+            <form action="{{ route('teams.update', ['id'=>$team->id]) }}" method="post">
+                @method('PUT')
+        @else    
+            <form action="{{ route('teams.store') }}" method="post">
+    @endif
         @csrf
 
         <label for="name">Nome:</label>
