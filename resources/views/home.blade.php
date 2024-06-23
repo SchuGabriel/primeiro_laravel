@@ -9,6 +9,7 @@
     <ul class="link-list">
         <li><a href="{{ route('teams.index') }}">Listar Times</a></li>
         <li><a href="{{ route('teams.create') }}">Cadastrar Time</a></li>
+        <li><a href="{{ route('players.index') }}">Listar Player</a></li>
     </ul>
 </div>
 @endsection"
