@@ -7,6 +7,7 @@
     <table>
         <tr>
             <th>ID</th>
+            <th>Escudo</th>
             <th>Nome</th>
             <th>País</th>
             <th>Ações</th>
@@ -14,6 +15,11 @@
         @foreach($teams as $team)
         <tr>
             <td>{{ $team->id }}</td>
+            <td>
+                @if($team->logo)
+                <img src="{{ asset('storage/' . $team->logo) }}" alt="{{ $team->name }}">
+                @endif
+            </td>
             <td>{{ $team->name }}</td>
             <td>{{ $team->country }}</td>
             <td>
