@@ -7,6 +7,7 @@
     <table>
         <tr>
             <th>ID</th>
+            <th>Foto</th>
             <th>Name</th>
             <th>Ability</th>
             <th>Actions</th>
@@ -14,6 +15,11 @@
         @foreach($players as $player)
         <tr>
             <td>{{ $player->id }}</td>
+            <td>
+                @if($player->foto)
+                <img src="{{ asset('storage/' . $player->foto) }}" alt="{{ $player->name }}" style="max-width:  150px;">
+                @endif
+            </td>
             <td>{{ $player->name }}</td>
             <td>{{ $player->ability }}</td>
             <td>

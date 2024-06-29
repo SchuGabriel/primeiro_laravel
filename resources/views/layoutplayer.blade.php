@@ -8,6 +8,7 @@
     @yield("style")
 </head>
 <body>
+    @include("includes.errors")
     @yield("content")
 </body>
 </html>

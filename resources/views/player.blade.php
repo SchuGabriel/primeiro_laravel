@@ -5,10 +5,10 @@
     <h1>Novo Player</h1>
     <a href="{{ route('players.index') }}">Voltar</a>
     @if($player->id)
-    <form action="{{ route('players.update', ['id' => $player->id]) }}" method="post">
+    <form action="{{ route('players.update', ['id' => $player->id]) }}" method="post" enctype="multipart/form-data">
         @method('PUT')
         @else
-        <form action="{{ route('players.store') }}" method="post">
+        <form action="{{ route('players.store') }}" method="post" enctype="multipart/form-data">
             @endif
             @csrf
 
@@ -17,6 +17,9 @@
 
             <label for="ability">Ability:</label>
             <input type="text" name="ability" id="ability" value="{{ $player->ability }}">
+
+            <label for="foto">Foto:</label>
+            <input type="file" name="foto" id="foto">
 
             <button type="submit">Salvar</button>
         </form>
