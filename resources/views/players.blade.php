@@ -10,6 +10,7 @@
             <th>Foto</th>
             <th>Name</th>
             <th>Ability</th>
+            <th>Time</th>
             <th>Actions</th>
         </tr>
         @foreach($players as $player)
@@ -22,6 +23,7 @@
             </td>
             <td>{{ $player->name }}</td>
             <td>{{ $player->ability }}</td>
+            <td>{{ $player->team->name }}</td>
             <td>
                 <a href="{{ route('players.edit', ['id' => $player->id]) }}">Editar</a>
                 <br>

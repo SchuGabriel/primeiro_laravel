@@ -18,6 +18,13 @@
             <label for="ability">Ability:</label>
             <input type="text" name="ability" id="ability" value="{{ $player->ability }}">
 
+            <label for="team_id">Time:</label>
+            <select name="team_id" id="team_id">
+                @foreach($teams as $team)
+                    <option value="{{ $team->id }}">{{ $team->name }}</option>
+                @endforeach
+            </select>
+
             <label for="foto">Foto:</label>
             <input type="file" name="foto" id="foto">
 
