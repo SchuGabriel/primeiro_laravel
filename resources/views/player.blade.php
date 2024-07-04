@@ -21,7 +21,10 @@
             <label for="team_id">Time:</label>
             <select name="team_id" id="team_id">
                 @foreach($teams as $team)
-                    <option value="{{ $team->id }}">{{ $team->name }}</option>
+                    <option value="{{ $team->id }}" 
+                            {{ $team->id == $player->team_id ? 'selected': '' }}>
+                        {{ $team->name }}
+                    </option>
                 @endforeach
             </select>
 

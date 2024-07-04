@@ -64,9 +64,11 @@ class PlayerController extends Controller
     public function edit($id)
     {
         $player = Player::find($id);
+        $teams = Team::all();
 
         return view("player", [
             "player" => $player,
+            "teams" => $teams,
         ]);
     }
 
@@ -97,6 +99,7 @@ class PlayerController extends Controller
 
         $player->name = $request->input("name");
         $player->ability = $request->input("ability");
+        $player->team_id = $request->input('team_id');
         $player->save();
 
         return redirect()->route("players.index");
